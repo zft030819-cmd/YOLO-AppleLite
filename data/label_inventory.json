@@ -1,0 +1,14 @@
+{
+  "image_counts": {
+    "train": 5870,
+    "val": 356,
+    "test": 356
+  },
+  "box_counts": {
+    "train": 10613,
+    "val": 648,
+    "test": 658
+  },
+  "labels_sha256_verified": 6582,
+  "images_redistributed": false
+}

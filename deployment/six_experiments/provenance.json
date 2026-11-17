@@ -1,0 +1,77 @@
+{
+  "pnnx": "20250912",
+  "ncnn": "20261020",
+  "sizes": [
+    640,
+    512,
+    416
+  ],
+  "calibration_images": 512,
+  "calibration_from_training_only": true,
+  "calibration_method": "KL",
+  "export_note": "EMA groups independently unrolled for all six configurations; same weights and operations",
+  "quantization_policy": "ordinary and true depthwise convolutions INT8; grouped convolutions and other operations floating point",
+  "source_sha256": "519fe7726fa9637288e79a39458df9fcb029a36b1dd1ac6670aeec2303f3887d",
+  "models": [
+    {
+      "id": "applelite_640_FP32",
+      "size": 640,
+      "precision": "FP32",
+      "ncnn_bin_bytes": 3876380,
+      "sha256": {
+        "model.ncnn.param": "dd3fda996d8fc8327e60b4ec291a4ab7108ef385da7758cbda9590ddc5e75935",
+        "model.ncnn.bin": "794f13a9dcd73c8b8ff70c72e2f5a09c00d6c980597e4c2c338eba96c2029f0c"
+      }
+    },
+    {
+      "id": "applelite_640_mixed_INT8",
+      "size": 640,
+      "precision": "mixed_INT8",
+      "ncnn_bin_bytes": 1149460,
+      "sha256": {
+        "model.ncnn.param": "fc9aea92b5d5958c5e1c1d01df08e49a4d8aebccce57ce89d96d08aae32c69b0",
+        "model.ncnn.bin": "6a9cb5f412d3bc0143c35a2e70027e63e3458ccf62004b70829ca0de6da68b49"
+      }
+    },
+    {
+      "id": "applelite_512_FP32",
+      "size": 512,
+      "precision": "FP32",
+      "ncnn_bin_bytes": 3815900,
+      "sha256": {
+        "model.ncnn.param": "6c71d4d079ba286c4f9294340a27837f2d217214d37305c2832eb449ffd943d7",
+        "model.ncnn.bin": "1831378a92362798150b081f77d7eb67df55cf084f3e1f7e954b714b4f83ff29"
+      }
+    },
+    {
+      "id": "applelite_512_mixed_INT8",
+      "size": 512,
+      "precision": "mixed_INT8",
+      "ncnn_bin_bytes": 1088980,
+      "sha256": {
+        "model.ncnn.param": "de55904932672c93cfbb560614a734bc2f9ec665148cd33a1363ed19bda05cce",
+        "model.ncnn.bin": "2dd46e71de2787e3b63a81942d70e06b231c7cf7e003a528a18f52953865e69c"
+      }
+    },
+    {
+      "id": "applelite_416_FP32",
+      "size": 416,
+      "precision": "FP32",
+      "ncnn_bin_bytes": 3779360,
+      "sha256": {
+        "model.ncnn.param": "834b4f1503a49de4e63a2fd0c42ca8fedc2b90899cc8a4108cf3640911a771be",
+        "model.ncnn.bin": "0c323e36d1d74227c950cd9fb9108b9ef0c19aafd5459a0e2677aead8b8944d5"
+      }
+    },
+    {
+      "id": "applelite_416_mixed_INT8",
+      "size": 416,
+      "precision": "mixed_INT8",
+      "ncnn_bin_bytes": 1052440,
+      "sha256": {
+        "model.ncnn.param": "d0d4b62e1fff4db21da15615db7ec88d1c8c3d6a006fea5da2ee61e75dc8d1ec",
+        "model.ncnn.bin": "18c70080a823b4f522d9becc827668892a246b45233ca01a262cbb8b381fb48e"
+      }
+    }
+  ]
+}

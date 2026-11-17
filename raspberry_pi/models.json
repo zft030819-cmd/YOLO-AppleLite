@@ -1,0 +1,45 @@
+{
+  "model_name": "YOLO-AppleLite V5 + NWD",
+  "source_checkpoint": "Training checkpoint not distributed in this public deployment package",
+  "checkpoint_sha256": "519fe7726fa9637288e79a39458df9fcb029a36b1dd1ac6670aeec2303f3887d",
+  "architecture_sha256": "a2ef5a112ede080c8903454e66033a039099d44243a8cad834b66f8523ffdc39",
+  "parameters": 927032,
+  "training_changed": false,
+  "precision": "FP32",
+  "profiles": [
+    {
+      "id": "v5-nwd-320",
+      "label": "V5 + NWD · 320 · FP32",
+      "size": 320,
+      "path": "models/applelite_nwd_320",
+      "precision": "FP32",
+      "input_name": "in0",
+      "output_name": "out0",
+      "param_sha256": "fef52a0b5daeb389c300662f8b67da6ab8eada7eca09b3c5da95b7bce610529d",
+      "bin_sha256": "1791b6328c694a3f1a0b39d9848c4a7a87a3bf5a674bca259e75c40654f4bf2f"
+    },
+    {
+      "id": "v5-nwd-640",
+      "label": "V5 + NWD · 640 · FP32",
+      "size": 640,
+      "path": "models/v5_nwd_640",
+      "precision": "FP32",
+      "input_name": "in0",
+      "output_name": "out0",
+      "param_sha256": "dd3fda996d8fc8327e60b4ec291a4ab7108ef385da7758cbda9590ddc5e75935",
+      "bin_sha256": "794f13a9dcd73c8b8ff70c72e2f5a09c00d6c980597e4c2c338eba96c2029f0c"
+    }
+  ],
+  "class_names": [
+    "Brown_Spot",
+    "Frog_Eye_Leaf_Spot",
+    "Grey_Spot",
+    "Healthy",
+    "Mosaic",
+    "Powdery_Mildew",
+    "Rust",
+    "Scab"
+  ],
+  "default_profile": "v5-nwd-320",
+  "note": "Fixed FP32 deployment models; historical accuracy, parity measurements and timing records are not included."
+}

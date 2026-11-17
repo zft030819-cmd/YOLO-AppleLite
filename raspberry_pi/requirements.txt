@@ -1,0 +1,3 @@
+# Raspberry Pi: use install.sh to keep apt numpy/OpenCV/Pillow/Picamera2 compatible.
+# The only pip runtime dependency is NCNN. No torch, Ultralytics or cloud account needed.
+ncnn==1.0.20261020

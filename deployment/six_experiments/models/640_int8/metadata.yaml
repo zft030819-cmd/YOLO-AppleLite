@@ -1,0 +1,22 @@
+author: Ultralytics
+version: 8.3.63
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: Brown_Spot
+  1: Frog_Eye_Leaf_Spot
+  2: Grey_Spot
+  3: Healthy
+  4: Mosaic
+  5: Powdery_Mildew
+  6: Rust
+  7: Scab
+args:
+  batch: 1
+  half: false

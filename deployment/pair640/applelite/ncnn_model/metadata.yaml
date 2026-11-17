@@ -1,0 +1,15 @@
+names:
+  0: Brown_Spot
+  1: Frog_Eye_Leaf_Spot
+  2: Grey_Spot
+  3: Healthy
+  4: Mosaic
+  5: Powdery_Mildew
+  6: Rust
+  7: Scab
+imgsz:
+- 640
+- 640
+task: detect
+stride: 32
+batch: 1

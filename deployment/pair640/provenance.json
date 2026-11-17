@@ -1,0 +1,27 @@
+{
+  "format": "NCNN FP32 CPU",
+  "imgsz": 640,
+  "batch": 1,
+  "pnnx": "20261020",
+  "ema_rewrite": false,
+  "models": [
+    {
+      "id": "baseline",
+      "parameters": 2521224,
+      "ncnn_bytes": 10140928,
+      "ncnn_sha256": {
+        "model.ncnn.param": "551bfae3ebb76d565ce1c14ee444e4599505e924b7be6610096b51ae6826714e",
+        "model.ncnn.bin": "a063cd90e5abe92a4ad16e200eb77a9bd8dae45ade1960461efc68715a00244d"
+      }
+    },
+    {
+      "id": "applelite",
+      "parameters": 927032,
+      "ncnn_bytes": 3790308,
+      "ncnn_sha256": {
+        "model.ncnn.param": "3a89c8ef1404be8d2f787410ee552df2aff9ed771b11d8e4ea2d9a3fdd470170",
+        "model.ncnn.bin": "398a10527d34bbc816d06b5c63ce29ae3123e3e5babe18422ea1408be55aee12"
+      }
+    }
+  ]
+}

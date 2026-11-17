@@ -1,0 +1,45 @@
+# YOLO-AppleLite V5 candidate: V2-scale widths and fusion, V4 no-SPPF/P3-EMA design.
+# Backbone outputs: P3=64, P4=96, P5=128. Detect inputs: 64/96/128.
+# A2C2f is retained only at P5; the P4 stage uses SDFE_Block, as in V2.
+# All measured V2/V3/V4 YAMLs remain unchanged. No accuracy claims before training.
+nc: 8
+scale: n
+scales:
+  n: [0.50, 0.25, 512]
+
+backbone:
+  - [-1, 1, Conv, [64, 3, 2]]               # 0: P1/2, 16 ch
+  - [-1, 1, Conv, [128, 3, 2, 1, 2]]        # 1: P2/4 grouped stem, 32 ch
+  - [-1, 2, C3k2, [256, False, 0.25]]       # 2: P2/4, 64 ch
+  - [-1, 1, Conv, [256, 3, 2, 1, 4]]        # 3: P3/8 grouped downsampling, 64 ch
+  - [-1, 2, C3k2, [256, False, 0.25]]       # 4: local mixing, 64 ch
+  - [-1, 1, SDFE_Block, [256, 3]]           # 5: P3 backbone feature, 64 ch
+
+  - [-1, 1, Conv, [384, 3, 2]]              # 6: P4/16, 96 ch; ordinary Conv retained
+  - [-1, 1, SDFE_Block, [384, 2]]           # 7: P4 enhancement, 96 ch
+
+  - [-1, 1, GhostConv, [512, 3, 2]]         # 8: P5/32, 128 ch
+  - [-1, 2, A2C2f, [512, True, 1]]          # 9: P5 attention; depth scaling gives n=1
+
+head:
+  - [-1, 1, nn.Upsample, [null, 2, nearest]] # 10: P5 -> P4
+  - [[-1, 7], 1, Concat, [1]]               # 11: 128+96 channels
+  - [-1, 1, Conv, [384, 1, 1]]              # 12: compress fusion to 96 ch
+  - [-1, 2, C3k2, [384, False, 0.25]]       # 13: P4 top-down fusion, 96 ch
+
+  - [-1, 1, nn.Upsample, [null, 2, nearest]] # 14: P4 -> P3
+  - [[-1, 5], 1, Concat, [1]]               # 15: 96+64 channels
+  - [-1, 1, Conv, [256, 1, 1]]              # 16: compress fusion to 64 ch
+  - [-1, 2, C3k2, [256, False, 0.50]]       # 17: retain P3 internal capacity
+  - [-1, 1, EMA, [256, 8]]                  # 18: fused P3 attention, 64 ch
+
+  - [-1, 1, GhostConv, [384, 3, 2]]         # 19: P3 -> P4, 96 ch
+  - [[-1, 13], 1, Concat, [1]]              # 20: concatenate top-down P4
+  - [-1, 1, Conv, [384, 1, 1]]              # 21: compress to 96 ch
+  - [-1, 2, C3k2, [384, False, 0.25]]       # 22: P4 detection feature
+
+  - [-1, 1, GhostConv, [512, 3, 2]]         # 23: P4 -> P5, 128 ch
+  - [[-1, 9], 1, Concat, [1]]               # 24: backbone P5, no SPPF
+  - [-1, 1, Conv, [512, 1, 1]]              # 25: compress to 128 ch
+  - [-1, 2, C3k2, [512, False, 0.25]]       # 26: P5 detection feature
+  - [[18, 22, 26], 1, Detect, [nc]]         # 27: strides 8/16/32

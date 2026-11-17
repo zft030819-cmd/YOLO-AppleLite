@@ -1,0 +1,10 @@
+Dataset attribution and scope
+Source project: south china agricultural univercity / apple-leaf-5rlik / version 1
+Source URL: https://universe.roboflow.com/south-china-agricultural-univercity/apple-leaf-5rlik/dataset/1
+The manuscript describes the source as CC BY 4.0. Authors must confirm the source terms and required attribution before public distribution of this candidate package.
+Image pixels and contact-sheet images are not redistributed here.
+Processed labels are copied byte-for-byte from the local dataset matching split_manifest.json, rather than reconstructed from an assumed class-remapping rule.
+The historical class-removal script and cleanup manifest are provenance only; exact historical intermediate steps are not asserted from those scripts alone.
+restore_data.py verifies original image and processed label hashes, then copies to a new output directory. It never edits the downloaded source tree.
+Group isolation is based on the frozen source/visual-group identifiers. It cannot prove orchard, tree or collection-session independence.
+The grouping review decisions and source statistics are included in grouping_audit/.

@@ -1,0 +1,112 @@
+{
+  "models": [
+    {
+      "name": "applelite_640_FP32",
+      "backend": "ncnn",
+      "path": "models/640_fp32",
+      "size": 640,
+      "precision": "FP32",
+      "output_format": "yolo_xywh_scores",
+      "names": [
+        "Brown_Spot",
+        "Frog_Eye_Leaf_Spot",
+        "Grey_Spot",
+        "Healthy",
+        "Mosaic",
+        "Powdery_Mildew",
+        "Rust",
+        "Scab"
+      ]
+    },
+    {
+      "name": "applelite_640_mixed_INT8",
+      "backend": "ncnn",
+      "path": "models/640_int8",
+      "size": 640,
+      "precision": "mixed_INT8",
+      "output_format": "yolo_xywh_scores",
+      "names": [
+        "Brown_Spot",
+        "Frog_Eye_Leaf_Spot",
+        "Grey_Spot",
+        "Healthy",
+        "Mosaic",
+        "Powdery_Mildew",
+        "Rust",
+        "Scab"
+      ]
+    },
+    {
+      "name": "applelite_512_FP32",
+      "backend": "ncnn",
+      "path": "models/512_fp32",
+      "size": 512,
+      "precision": "FP32",
+      "output_format": "yolo_xywh_scores",
+      "names": [
+        "Brown_Spot",
+        "Frog_Eye_Leaf_Spot",
+        "Grey_Spot",
+        "Healthy",
+        "Mosaic",
+        "Powdery_Mildew",
+        "Rust",
+        "Scab"
+      ]
+    },
+    {
+      "name": "applelite_512_mixed_INT8",
+      "backend": "ncnn",
+      "path": "models/512_int8",
+      "size": 512,
+      "precision": "mixed_INT8",
+      "output_format": "yolo_xywh_scores",
+      "names": [
+        "Brown_Spot",
+        "Frog_Eye_Leaf_Spot",
+        "Grey_Spot",
+        "Healthy",
+        "Mosaic",
+        "Powdery_Mildew",
+        "Rust",
+        "Scab"
+      ]
+    },
+    {
+      "name": "applelite_416_FP32",
+      "backend": "ncnn",
+      "path": "models/416_fp32",
+      "size": 416,
+      "precision": "FP32",
+      "output_format": "yolo_xywh_scores",
+      "names": [
+        "Brown_Spot",
+        "Frog_Eye_Leaf_Spot",
+        "Grey_Spot",
+        "Healthy",
+        "Mosaic",
+        "Powdery_Mildew",
+        "Rust",
+        "Scab"
+      ]
+    },
+    {
+      "name": "applelite_416_mixed_INT8",
+      "backend": "ncnn",
+      "path": "models/416_int8",
+      "size": 416,
+      "precision": "mixed_INT8",
+      "output_format": "yolo_xywh_scores",
+      "names": [
+        "Brown_Spot",
+        "Frog_Eye_Leaf_Spot",
+        "Grey_Spot",
+        "Healthy",
+        "Mosaic",
+        "Powdery_Mildew",
+        "Rust",
+        "Scab"
+      ]
+    }
+  ]
+}
