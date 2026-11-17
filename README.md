@@ -44,12 +44,3 @@ PYTHON=/path/to/pi_environment/bin/python bash run.sh
 Benchmarks create new local timing outputs. They do not require or contain historical accuracy files, and they no longer attach paper accuracy values to timing tables. Use `scripts/evaluate_deployment.py` to compute new deployment accuracy separately. The two conversion families use different EMA exports and must not be combined to claim conversion speedups.
 
 `python scripts/export_ncnn.py --help` describes native FP32 and training-only mixed INT8 export. Supply your own checkpoint and matching PNNX/NCNN tool executables. The fixed calibration image identities are included.
-
-## Checks and disclosure
-
-```bash
-python scripts/verify_release.py
-python tests/test_restore_data.py
-```
-
-This package makes no new claim that manuscript results have been independently verified. Data/code availability statements in a manuscript must accurately describe what is and is not shared and follow the journal's requirements. Upstream licenses and attribution remain in `LICENSE` and `THIRD_PARTY.md`.
